@@ -1,4 +1,3 @@
-import csv
 from src.models import Employee
 from tests.fixtures.models_fixtures import sample_employee_row
 

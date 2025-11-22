@@ -1,6 +1,7 @@
 from src.validators import file_validation
 from tests.fixtures.file_fixtures import *
 
+
 def test_file_not_found_validation(capsys):
     result = file_validation("nonexistent_file.csv")
     captured = capsys.readouterr()
@@ -9,7 +10,7 @@ def test_file_not_found_validation(capsys):
 
 
 def test_path_is_not_file(capsys):
-    result = file_validation('/')
+    result = file_validation("/")
     captured = capsys.readouterr()
     assert result is None
     assert "/ is not a file" in captured.out

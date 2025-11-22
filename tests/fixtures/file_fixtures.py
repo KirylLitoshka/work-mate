@@ -5,7 +5,9 @@ import pytest
 
 @pytest.fixture
 def single_csv_file():
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".csv", delete=False) as f:
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".csv", delete=False
+    ) as f:
         f.write("Lorem ipsum")
         temp_file_path = f.name
 
@@ -17,7 +19,9 @@ def single_csv_file():
 
 @pytest.fixture
 def empty_csv_file():
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".csv", delete=False) as f:
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".csv", delete=False
+    ) as f:
         temp_file_path = f.name
 
     yield temp_file_path
@@ -28,7 +32,9 @@ def empty_csv_file():
 
 @pytest.fixture
 def simple_text_file():
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as f:
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".txt", delete=False
+    ) as f:
         temp_file_path = f.name
         f.write = "Lorem ipsum"
 
@@ -40,7 +46,9 @@ def simple_text_file():
 
 @pytest.fixture
 def sample_csv_file():
-    with tempfile.NamedTemporaryFile(mode="w+", suffix=".csv", delete=False) as f:
+    with tempfile.NamedTemporaryFile(
+        mode="w+", suffix=".csv", delete=False
+    ) as f:
         f.write(
             "name,position,completed_tasks,performance,skills,team,experience_years\n"
         )

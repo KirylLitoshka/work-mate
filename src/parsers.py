@@ -5,7 +5,11 @@ from src.validators import file_validation
 def args_parse() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--files", type=file_validation, nargs="*", default=[], help="File paths"
+        "--files",
+        type=file_validation,
+        nargs="*",
+        default=[],
+        help="File paths"
     )
     parser.add_argument(
         "--report",

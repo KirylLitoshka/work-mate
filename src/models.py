@@ -19,7 +19,9 @@ class Employee:
             position=row["position"],
             completed_tasks=int(row["completed_tasks"]),
             performance=float(row["performance"]),
-            skills=[skill.strip() for skill in row["skills"].strip('"').split(",")],
+            skills=[
+                skill.strip() for skill in row["skills"].strip('"').split(",")
+            ],
             team=row["team"],
             experience_years=int(row["experience_years"]),
         )

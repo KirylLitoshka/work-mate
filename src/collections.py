@@ -37,11 +37,15 @@ class EmployeeCollection:
             stats["performance"] += emp.performance
 
         for _, stats in position_stats.items():
-            stats["performance"] = round(stats["performance"] / stats["count"], 2)
+            stats["performance"] = round(
+                stats["performance"] / stats["count"], 2
+            )
 
         sorted_by_performance = dict(
             sorted(
-                position_stats.items(), key=lambda x: x[1]["performance"], reverse=True
+                position_stats.items(),
+                key=lambda x: x[1]["performance"],
+                reverse=True
             )
         )
         return sorted_by_performance
@@ -51,8 +55,8 @@ class EmployeeCollection:
         table_data = []
         headers = ["", "position", "performance"]
 
-        for index, (position, stats) in enumerate(performance.items(), start=1):
-            table_data.append([index, position, stats["performance"]])
+        for i, (position, stats) in enumerate(performance.items(), start=1):
+            table_data.append([i, position, stats["performance"]])
 
         print(tabulate(table_data, headers=headers))
 

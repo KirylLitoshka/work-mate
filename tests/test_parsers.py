@@ -46,4 +46,3 @@ def test_existed_files_args(monkeypatch, single_csv_file):
     monkeypatch.setattr(sys, "argv", test_args)
     args = args_parse()
     assert single_csv_file in args.files
-   
